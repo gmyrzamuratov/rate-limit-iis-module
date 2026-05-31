@@ -73,7 +73,11 @@ http HTTP/1.1 429 Too Many Requests Retry-After: 60 Content-Type: application/js
 
 Response body:
 
-json {   "error": "Rate limit exceeded. Please try again later." } 
+```json
+{
+  "error": "Rate limit exceeded. Please try again later."
+} 
+```
 
 ## How It Works
 
