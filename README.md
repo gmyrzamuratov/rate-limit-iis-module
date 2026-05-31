@@ -18,7 +18,13 @@ This module can be used to protect an Angular application hosted on IIS from too
 
 Add these settings to your Web.config:
 
-xml <appSettings>   <add key="RateLimit:MaxRequests" value="100" />   <add key="RateLimit:TimeWindowMinutes" value="1" />   <add key="RateLimit:Whitelist" value="127.0.0.1,::1" /> </appSettings> 
+```xml
+<appSettings>   
+  <add key="RateLimit:MaxRequests" value="100" />   
+  <add key="RateLimit:TimeWindowMinutes" value="1" />   
+  <add key="RateLimit:Whitelist" value="127.0.0.1,::1" /> 
+</appSettings> 
+```
 
 ### Settings
 
@@ -32,17 +38,32 @@ xml <appSettings>   <add key="RateLimit:MaxRequests" value="100" />   <add key="
 
 For IIS integrated pipeline mode:
 
-xml <system.webServer>   <modules>     <add name="RateLimit429Module" type="RateLimit429.MyModule, RateLimit429" />   </modules> </system.webServer> 
+```xml
+<system.webServer>
+  <modules>
+    <add name="RateLimit429Module" type="RateLimit429.MyModule, RateLimit429" />
+  </modules>
+</system.webServer> 
+```
 
 If you use classic ASP.NET pipeline, also add:
 
-xml <system.web>   <httpModules>     <add name="RateLimit429Module" type="RateLimit429.MyModule, RateLimit429" />   </httpModules> </system.web> 
+```xml
+<system.web>
+  <httpModules>
+    <add name="RateLimit429Module" type="RateLimit429.MyModule, RateLimit429" />
+  </httpModules>
+</system.web> 
+```
 
 ## Example Behavior
 
 If configuration is:
 
-xml <add key="RateLimit:MaxRequests" value="100" /> <add key="RateLimit:TimeWindowMinutes" value="1" /> 
+```xml
+<add key="RateLimit:MaxRequests" value="100" />
+<add key="RateLimit:TimeWindowMinutes" value="1" /> 
+```
 
 Then one IP address can make up to 100 requests per 1 minute.
 
